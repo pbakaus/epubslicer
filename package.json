@@ -1,0 +1,15 @@
+{
+  "name": "epubmanipulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Bakaus",
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "^0.5.10",
+    "x2js": "^3.4.4"
+  }
+}
