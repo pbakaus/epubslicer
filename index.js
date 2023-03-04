@@ -31,7 +31,7 @@ const OPF = EpubSlicer.getOPF(zip);
 // delete chapters from spine first - returns deleted chapters as array
 EpubSlicer.deleteChaptersFromSpine(OPF, options.keepChapters);
 
-// delete all other references to the deleted chapters
+// delete all other references to the deleted chapters, as well as the actual chapters
 EpubSlicer.cleanup(zip, OPF);
 
 // Re-serialize OPF to string and save back into zip

@@ -72,12 +72,14 @@ const Slicer = {
 
         // remove from OPF manifest (but don't wipe the nav - important)
         OPF.package.manifest.item = OPF.package.manifest.item.filter(chapter => {
+            const absPath = path.join(path.dirname(_data.rootfile), chapter._href);
 
             // if the item matches a to-be-deleted id, wipe it, and keep track of the related file url
             // so we can scan other files later to delete anything referring to that url.
             // IMPORTANT: We need to make sure to not wipe the TOCs (this would make the EPUB invalid)
             if(_data.deletedIds.includes(chapter._id) && chapter._properties !== 'nav' && chapter['_media-type'] !== 'application/x-dtbncx+xml') {
                 _data.deletedEntries.push(chapter._href); // important: needs to be the relative path, not abs path
+                zipObj.deleteFile(absPath); // delete actual chapter file
                 return false;
             }
             
