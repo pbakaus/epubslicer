@@ -1,8 +1,9 @@
 {
-  "name": "epubmanipulator",
+  "name": "epubslicer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Removes sections from epub files and creates a new epub.",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
